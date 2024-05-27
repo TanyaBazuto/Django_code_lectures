@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>                                        # в body описываем всю логику шаблона
-{% for order in orders %}
-    <p>Заказ #{{ order.id }}</p>
-    {% for position in order.positions.all %}
-        <p>{{ position.product.name }}: {{ position.quantity }}</p>
+{% for order in orders %}                     # проходим по всем заказам
+    <p>Заказ #{{ order.id }}</p>              # для каждого заказ выводим его id.  <p> - c нового абзаца
+    {% for position in order.positions.all %}           # дополнительный цикл прохода по всем заказам. positions - это такой же менеджер как objects, т.е. после dop мы указываем какие именно позиции нам нужны -- все или filter
+        <p>{{ position.product.name }}: {{ position.quantity }}</p>    # для каждой позиции заказа выводим содержимое - какие продукты и в каком количестве
     {% endfor %}
 {% endfor %}
 </body>
