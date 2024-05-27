@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body>                                        # в body описываем всю логику шаблона
 {% for order in orders %}
     <p>Заказ #{{ order.id }}</p>
     {% for position in order.positions.all %}
