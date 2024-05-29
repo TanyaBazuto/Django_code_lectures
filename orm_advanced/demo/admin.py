@@ -4,7 +4,7 @@ from .models import Product, Order, OrderPosition
 #Inline-модели - специальный механизм, позволяющий встраивать в текущее отображение(таблицу) другое отображение
 class OrderPositionInline(admin.TabularInline):     #есть admin.StackedInline - отличается внешним видом
     model = OrderPosition            # =для какой модели из models.py
-    extra = 0                        # необязательный параметр, по умолчанию = 3 - сколько строк создастся в панели администратора
+    extra = 0                        # необязательный параметр, по умолчанию = 3 - сколько пустых строк создастся в панели администратора
 
 
 @admin.register(Product)
