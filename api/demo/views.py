@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view      # импорт api-обработчика
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -8,8 +8,8 @@ from .models import Weapon
 from .serializers import WeaponSerializer
 
 
-# @api_view(['GET', 'POST'])
-# def demo(request):
+# @api_view(['GET', 'POST'])     # декоратор для превращения обработчика в api-обработчик. В () - список запросов, на которые должен отвечать обработчик
+# def demo(request):             # не забывать регистрировать в  urls.py, и применять миграции - migrate
 #     if request.method == 'GET':
 #         weapons = Weapon.objects.all()
 #         ser = WeaponSerializer(weapons, many=True)
