@@ -21,6 +21,6 @@ from demo.views import DemoView, WeaponView
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('demo/', demo),
-    path('demo/', DemoView.as_view()),
+    path('demo/', DemoView.as_view()),             # метод .as_view() применяется при использовании в обработчике APIView
     path('weapon/<pk>/', WeaponView.as_view()),
 ]
