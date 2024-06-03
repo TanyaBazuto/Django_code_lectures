@@ -26,16 +26,17 @@ from .serializers import WeaponSerializer              # ипортируем с
 #
 #     def post(self, request):
 #         return Response({'status': 'OK'})
-
-
+:
+ListAPIView - специальный класс для упрощения кода. По умолчанию ListAPIView формирует только GET-запрос. Остальное необходимо прописывать отдельно
 class DemoView(ListAPIView):
-    queryset = Weapon.objects.all()
-    serializer_class = WeaponSerializer
+    queryset = Weapon.objects.all()       # queryset показывает откуда брать данные
+    serializer_class = WeaponSerializer   # указываем с помощью чего набор данных превратить в json
 
     def post(self, request):
         return Response({'status': 'OK'})
 
-
+RetrieveAPIView - специальный класс для получения информации по одной конкретной записи в БД
 class WeaponView(RetrieveAPIView):
-    queryset = Weapon.objects.all()
+    queryset = Weapon.objects.all()      # поиск среди всех записей в БД
     serializer_class = WeaponSerializer
+Затем регистрируем маршрут обработчика WeaponView в urls.py
