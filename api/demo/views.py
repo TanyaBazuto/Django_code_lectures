@@ -5,14 +5,14 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Weapon                # подключаем необходимы модели из models.py
-from .serializers import WeaponSerializer
+from .serializers import WeaponSerializer  # ипортируем сериализатор
 
 
 # @api_view(['GET', 'POST'])     # декоратор для превращения обработчика в api-обработчик. В () - список запросов, на которые должен отвечать обработчик
 # def demo(request):             # не забывать регистрировать в  urls.py, и применять миграции - migrate
 #     if request.method == 'GET':
 #         weapons = Weapon.objects.all()          # достать из БД все объекты модели Weapon  
-#         ser = WeaponSerializer(weapons, many=True)   # сериализатор превращает сложные данные из БД в JSON, или наоборот из JSON собирает сложный объект python
+#         ser = WeaponSerializer(weapons, many=True)   # создаем сериализованный набор данных модели Weapon с помощью сериализатора, созданного в файле serializers.py. many=True означает, что серализатор выдаст полный список объектов, а не конкретный объект
 #         return Response(ser.data)
 #     if request.method == 'POST':
 #         return Response({'status': 'OK'})
