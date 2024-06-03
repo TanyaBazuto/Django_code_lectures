@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('demo/', demo),
     path('demo/', DemoView.as_view()),             # метод .as_view() применяется при использовании в обработчике APIView
-    path('weapon/<pk>/', WeaponView.as_view()),
+    path('weapon/<pk>/', WeaponView.as_view()),    # так как WeaponView - это запрос на конкретную запись в БД, то в маршруте регистриуем id записи - <pk> (сокращение от primary key)
 ]
