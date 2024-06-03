@@ -37,6 +37,6 @@ class DemoView(ListAPIView):
 
 RetrieveAPIView - специальный класс для получения информации по одной конкретной записи в БД
 class WeaponView(RetrieveAPIView):
-    queryset = Weapon.objects.all()      # поиск среди всех записей в БД
-    serializer_class = WeaponSerializer
+    queryset = Weapon.objects.all()      # что достаем? -- поиск среди всех записей в БД
+    serializer_class = WeaponSerializer  # в каком формате
 Затем регистрируем маршрут обработчика WeaponView в urls.py
