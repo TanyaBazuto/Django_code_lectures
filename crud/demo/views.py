@@ -35,8 +35,8 @@ class CommentViewSet(ViewSet):
 ### В DRF есть более удобный ModelViewSet -- в нем уже реализованы методы ViewSet: 
 
 class CommentViewSet(ModelViewSet):
-    queryset = Comment.objects.all()               # откуда будем брать все данные
-    serializer_class = CommentSerializer               # сериализатор, с помощью которого все объекты будут превращаться в JSON и обратно
+    queryset = Comment.objects.all()               # атрибут "ЧТО ДОСТАЕМ" -- откуда будем брать все данные
+    serializer_class = CommentSerializer               # атрибут "В КАКОМ ФОРМАТЕ ОТДАЁМ" -- сериализатор, с помощью которого все объекты будут превращаться в JSON и обратно
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]               # 
     filterset_fields = ['user',]
     search_fields = ['text',]
