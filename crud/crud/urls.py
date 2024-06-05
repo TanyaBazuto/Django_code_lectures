@@ -19,9 +19,11 @@ from rest_framework.routers import DefaultRouter
 
 from demo.views import CommentViewSet
 
-r = DefaultRouter()
-r.register('comments', CommentViewSet)
+### ViewSet нельзя просто превратить в функцию, т.к. это набор сразу нескольких обработчиков. Для этого используем РОУТЕР- специальный класс, который умеет регистрировать маршруты для ViewSet
+
+r = DefaultRouter()                       # стандартный роутер
+r.register('comments', CommentViewSet)    # в роутере регистрируем конкретный ViewSet. Префикс 'comments'- означает по какокому url из браузера будем получать доступ к ресурсу. 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-] + r.urls
+] + r.urls                                # добавляем в существующие маршруты из роутера
