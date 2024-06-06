@@ -40,7 +40,7 @@ class CommentViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]               # 2ой вариант настройка фильтров -- указание фильтров без прописывания REST_FRAMEWORK в settings.py
     filterset_fields = ['user',]                                                        # DjangoFilterBackend - список атрибутов/полей по которым выполняется фильтрация
     search_fields = ['text',]                                                           # SearchFilter -поиск по полю. Указываем поля по которым осуществляется поиск
-    ordering_fields = ['id', 'user', 'text', 'created_at']                              № OrderingFilter - упорядочивание данных. Указываем список параметров по которым необходимо упорядочивание = поля по которым можно фильтровать
-    pagination_class = LimitOffsetPagination
-
+    ordering_fields = ['id', 'user', 'text', 'created_at']                              # OrderingFilter - упорядочивание данных. Указываем список параметров по которым необходимо упорядочивание = поля по которым можно фильтровать
+    pagination_class = LimitOffsetPagination                                            # 2ой вариант настройка пагинации -- указание (без прописывания в секции REST_FRAMEWORK в settings.py) pagination class для конкретного ViewSet/
+(                                                                                       # Например, класс пагинации "LimitOffsetPagination" требует указания в запросе параметров: limit(сколько объектов показать за раз) и offset (сколько пропустить их)
 
