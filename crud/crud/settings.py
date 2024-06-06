@@ -134,7 +134,7 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [                                 # DEFAULT_FILTER_BACKENDS -- список, который содержит все доступные фильтры. В DRF по умолчанию реализованы три типа фильтров: DjangoFilterBackend, SearchFilter, OrderingFilter
         'django_filters.rest_framework.DjangoFilterBackend',     # 1ый стандартная фильтрация по параметрам. Все фильтры будут использоваться для всех ViewSet из views.py/
     ],
-    'SEARCH_PARAM': 'q',
+    'SEARCH_PARAM': 'q',                                         # search - слово по умолчанию для запросов фильтрации SearchFilter. Чтобы его поменять указываем в 'SEARCH_PARAM' новое слово для поиска. В данном случае на 'q'
     'ORDERING_PARAM': 'o',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 3
