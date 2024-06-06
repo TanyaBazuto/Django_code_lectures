@@ -129,13 +129,13 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-### Вариант настройки фильтрации
+### Вариант настройки фильтрации и пагинации (в противном случае указывать в каждом ViewSet в views.py
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [                                 # DEFAULT_FILTER_BACKENDS -- список, который содержит все доступные фильтры. В DRF по умолчанию реализованы три типа фильтров: DjangoFilterBackend, SearchFilter, OrderingFilter
         'django_filters.rest_framework.DjangoFilterBackend',     # 1ый стандартная фильтрация по параметрам. Все фильтры будут использоваться для всех ViewSet из views.py/
     ],
     'SEARCH_PARAM': 'q',                                         # search - слово по умолчанию для запросов фильтрации SearchFilter. Чтобы его поменять указываем в 'SEARCH_PARAM' новое слово для поиска. В данном случае на 'q'
     'ORDERING_PARAM': 'o',                                       # ordering - слово по умолчанию для запросов фильтрации OrderingFilter. Чтобы его поменять указываем в 'ORDERING_PARAM' новое слово для поиска. В данном случае на 'o'
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 3
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',   # по умолчанию несколько классов пагинации. Один из них -- .PageNumberPagination -- данный класс позволяет пагинироваться постранично
+    'PAGE_SIZE': 3      # указания количество элементов на 1 странице
 }
