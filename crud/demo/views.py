@@ -37,8 +37,8 @@ class CommentViewSet(ViewSet):
 class CommentViewSet(ModelViewSet):
     queryset = Comment.objects.all()               # атрибут "ЧТО ДОСТАЕМ" -- откуда будем брать все данные
     serializer_class = CommentSerializer               # атрибут "В КАКОМ ФОРМАТЕ ОТДАЁМ" -- сериализатор, с помощью которого все объекты будут превращаться в JSON и обратно
-    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]               # 
-    filterset_fields = ['user',]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]               # настройка фильтров -- указание фильтров без прописывания REST_FRAMEWORK в settings.py
+    filterset_fields = ['user',]                                                        # список атрибутов по которым выполняется фильтрация. Передаются с помощьью GET запросов
     search_fields = ['text',]
     ordering_fields = ['id', 'user', 'text', 'created_at']
     pagination_class = LimitOffsetPagination
