@@ -135,7 +135,7 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',     # 1ый стандартная фильтрация по параметрам. Все фильтры будут использоваться для всех ViewSet из views.py/
     ],
     'SEARCH_PARAM': 'q',                                         # search - слово по умолчанию для запросов фильтрации SearchFilter. Чтобы его поменять указываем в 'SEARCH_PARAM' новое слово для поиска. В данном случае на 'q'
-    'ORDERING_PARAM': 'o',
+    'ORDERING_PARAM': 'o',                                       # ordering - слово по умолчанию для запросов фильтрации OrderingFilter. Чтобы его поменять указываем в 'ORDERING_PARAM' новое слово для поиска. В данном случае на 'o'
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 3
 }
