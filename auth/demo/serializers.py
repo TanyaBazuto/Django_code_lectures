@@ -6,5 +6,5 @@ from demo.models import Adv
 class AdvSerializer(serializers.ModelSerializer):
     class Meta:
         model = Adv
-        fields = ['id', 'user', 'text', 'created_at', 'open']
-        read_only_fields = ['user',]
+        fields = ['id', 'user', 'text', 'created_at', 'open']   # поля, которые необходимо отоброжать у json
+        read_only_fields = ['user',]                            # 
