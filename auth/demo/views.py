@@ -14,5 +14,5 @@ class AdvViewSet(ModelViewSet):
     permission_classes = [IsOwnerOrReadOnly]
     throttle_classes = [AnonRateThrottle]
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+    def perform_create(self, serializer):           # метод есть на все действия, _create, _update, _destroy,
+        serializer.save(user=self.request.user)     # вызываем сериалайзер который сохраняет объект в БД - полььзователя доостаем из запроса по токену, чтоб не указывать при запросах явно его id
