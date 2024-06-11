@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'rest_framework.authtoken',
+    'rest_framework.authtoken',    # аутентификация по токену, которая добавляет спец.модели, которые хранят в БД соответствие между токеном и пользователем
 
     'demo',
 ]
@@ -129,9 +129,10 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+### настройка процесса аутентификации пользователей
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+    'DEFAULT_AUTHENTICATION_CLASSES': [                       # параметр отвечает за выбранный механизм аутентификации - список доступных механизмов аутентификации
+        'rest_framework.authentication.TokenAuthentication',  # аутентификация по токену
     ],
     'DEFAULT_THROTTLE_CLASSES': [
         # 'rest_framework.throttling.UserRateThrottle',
