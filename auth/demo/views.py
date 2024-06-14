@@ -11,7 +11,7 @@ from demo.serializers import AdvSerializer
 class AdvViewSet(ModelViewSet):
     queryset = Adv.objects.all()
     serializer_class = AdvSerializer
-    permission_classes = [IsOwnerOrReadOnly]        # настройка по разделению прав пользователей, в которую мы передаем те разрешения, что требуются для работы
+    permission_classes = [IsOwnerOrReadOnly]        # настройка по разделению прав пользователей -- список в который мы передаем те разрешения, что требуются для работы пользователя
     throttle_classes = [AnonRateThrottle]
 
     def perform_create(self, serializer):           # метод есть на все действия, _create, _update, _destroy,
