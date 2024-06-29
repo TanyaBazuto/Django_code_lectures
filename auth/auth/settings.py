@@ -134,11 +134,11 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [                       # параметр отвечает за выбранный механизм аутентификации - список доступных механизмов аутентификации
         'rest_framework.authentication.TokenAuthentication',  # аутентификация по токену
     ],
-    'DEFAULT_THROTTLE_CLASSES': [
-        # 'rest_framework.throttling.UserRateThrottle',
-        # 'rest_framework.throttling.AnonRateThrottle',
+    'DEFAULT_THROTTLE_CLASSES': [                             # список механизмов троттинга включить и с какими настройками
+        # 'rest_framework.throttling.UserRateThrottle',       # троттинг по пользователю. Контроль сколько запросов за единицу времени отправит зарегистрированный пользователь
+        # 'rest_framework.throttling.AnonRateThrottle',       # троттинг по анонимному пользователю. Контроль сколько запросов за единицу времени отправит анонимный пользователь
     ],
-    'DEFAULT_THROTTLE_RATES': {
+    'DEFAULT_THROTTLE_RATES': {                               # словарь-настройка -- сколькое запросов на единицу времени можно отправлять тем или иным пользователям
         'user': '10/minute',
         'anon': '2/minute',
     }
