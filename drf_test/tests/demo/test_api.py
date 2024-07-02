@@ -45,7 +45,7 @@ def test_create_message(client, user):      #тест на создание со
     count = Message.objects.count()
 
     response = client.post('/messages/', data={'user': user.id, 'text': 'test text'})   #напишем действие по созданию message. Для передачи в json, а не в тексте, можно здесь же +аргумент format='json'
-                                                                                          # или создать настройки в settings.py  
+                                                                                          # или создать настройки в settings.py  в секции REST_FRAMEWORK
 
     assert response.status_code == 201       #проверка что наш response вернулся с правильным кодом
     assert Message.objects.count() == count + 1
