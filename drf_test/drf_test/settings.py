@@ -128,6 +128,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-REST_FRAMEWORK = {
+REST_FRAMEWORK = {                          # указания формата по умолчанию для тестирования
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
