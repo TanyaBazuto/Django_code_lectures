@@ -1,2 +1,3 @@
 [run]
-omit=tests/*,.venv/*,manage.py,drf_test/*,*tests.py
+omit=tests/*,.venv/*,manage.py,drf_test/*,*tests.py   
+#указываем секцию run и в параметре omit указываем что нужно ПРОПУСТИТЬ. Н: Папка tests/ и *все файлы в ней
